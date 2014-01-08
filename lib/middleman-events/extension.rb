@@ -1,5 +1,4 @@
 require 'active_support/core_ext'
-require 'pry'
 
 module Middleman
   module Events
@@ -35,6 +34,21 @@ module Middleman
     end
 
     module Helpers
+      def short_event_list
+        event_list = EventList.new(data.events, data.venues, data.groups)
+        groups = event_list.groups
+        venues = event_list.venues
+        @events = event_list.filter.published.upcoming.ascending.latest(3).filtered
+
+        html = "<dl>"
+        @events.each do |key, event|
+          html << "<dt><a href='/events/#{key}'>#{event.title} - #{event.venue.city}, #{event.venue.state}</a></dt>"
+          html << "<dd><a href='/events/#{key}'>#{event.date_time.strftime('%b %d - %I:%M %P')}</a></dd>"
+        end
+        html << "</dl>"
+        
+        html
+      end
     end
 
     class SitemapExtension

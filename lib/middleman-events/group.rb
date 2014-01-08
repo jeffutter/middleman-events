@@ -1,5 +1,3 @@
-require 'pry'
-
 module Middleman
   module Events
 
