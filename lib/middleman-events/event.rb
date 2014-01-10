@@ -57,7 +57,7 @@ module Middleman
       end
 
       def url
-        ::Middleman::Util.normalize_path(Events.options[:basedir]+"/#{year}/#{month}/#{day}/#{slug}/")
+        File.join('/',Events.options[:basedir],year.to_s,month.to_s,day.to_s,slug)
       end
 
       def id
