@@ -15,11 +15,11 @@ module Middleman
       end
 
       def upcoming_events
-        @event_list.filter.published.in_group(name).upcoming.ascending
+        @event_list.filter.published.in_venue(name).upcoming.ascending
       end
 
       def past_events 
-        @event_list.filter.published.in_group(name).past.descending
+        @event_list.filter.published.in_venue(name).past.descending
       end
 
       def upcoming_events_by_month_year
