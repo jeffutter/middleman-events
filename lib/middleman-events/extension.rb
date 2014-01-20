@@ -42,7 +42,7 @@ module Middleman
 
         html = "<dl>"
         @events.each do |key, event|
-          html << "<dt><a href='#{event.url}'>#{event.title} - #{event.venue.city}, #{event.venue.state}</a></dt>"
+          html << "<dt><a href='#{event.url}'>#{event.group.name}: #{event.title} - #{event.venue.city}, #{event.venue.state}</a></dt>"
           html << "<dd><a href='#{event.url}'>#{event.date_time.strftime('%b %d - %I:%M %P')}</a></dd>"
         end
         html << "</dl>"
