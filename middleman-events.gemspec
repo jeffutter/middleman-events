@@ -17,9 +17,10 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
   
   # The version of middleman-core your extension depends on
-  s.add_runtime_dependency("middleman-core", [">= 3.2.1"])
+  s.add_runtime_dependency "middleman-core", '>= 3.2.2'
 
-  s.add_runtime_dependency("tzinfo",    ["~> 1.1.0"])
-  s.add_runtime_dependency("timezone",  ["~> 0.3.1"])
-  s.add_runtime_dependency("icalendar", ["~> 1.5.0"])
+  #s.add_runtime_dependency 'tzinfo',     '~> 1.1'
+  s.add_runtime_dependency 'tzinfo',     '~> 0.3.37'
+  s.add_runtime_dependency "timezone",   '~> 0.3.1'
+  s.add_runtime_dependency "icalendar",  '~> 1.5.2'
 end
